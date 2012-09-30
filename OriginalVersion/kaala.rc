@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////
+//	kaala.rc
+
+#include <os2.h>
+#include "defs.h"
+
+ICON IDR_MAIN PRELOAD kaala.ico
+
+MENU IDR_MAIN PRELOAD
+	BEGIN
+	SUBMENU	"~File", IDM_FILE, MIS_TEXT
+	BEGIN
+		MENUITEM SEPARATOR
+		MENUITEM	"E~xit",	IDM_FILEEXIT, MIS_TEXT
+	END
+	SUBMENU	"~Game", IDM_GAME, MIS_TEXT
+	BEGIN
+		MENUITEM "~Undo", IDM_GAMEUNDO, MIS_TEXT
+		MENUITEM	"~Options ...", 	IDM_GAMEOPTIONS, MIS_TEXT
+	END
+END
+ 

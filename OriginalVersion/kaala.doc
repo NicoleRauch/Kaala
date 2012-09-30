@@ -1,0 +1,77 @@
+Description of the classes used:
+
+class HOLE
+	class TOPHOME
+	class BOTHOME
+
+	The holes of the gameboard are constructed of these classes.
+	Each hole has a variable that contains the number of stones in this 
+	hole (Contents). The value of this variable is accessible via the
+	function GetContents() which returns it.
+	Each hole has three pointers (Prev, Next, Oppos) that point to other
+	holes in the gameboard, the previous, next and opposite hole.
+	These pointers are returned by the functions GetNext(), GetPrev()
+	and GetOppos().
+	Each hole has a variable (Side) that determines which side the hole
+	belongs to (top side or bottom side). The function SameSide( SIDE )
+	expects a SIDE variable (normally the side variable of the player
+	is used) and returns TRUE or FALSE, depending on whether the hole
+	side and the passed side are equal or different.
+	The function Drop(BYTE&) reduces the passed variable by one and
+	increases the hole contents by one. If the hole is of the derived
+	classes TOPHOME or BOTHOME, the hole decides whether it may take
+	a stone, depending on the player. 
+	The function Undo(BYTE&) acts similar to Drop, but vice versa.
+	The function Empty() takes all stones out of the hole and returns
+	this number.
+	The function Fill(BYTE) adds the number of stones passed in the 
+	variable to the hole contents.
+	The function TakeOut(BYTE) takes the specified number of stones
+	out of the hole (no validity check!)
+	The function SetValues(HOLE*, HOLE*, HOLE*, SIDE) is used to adjust
+	the pointers of one hole to other holes and to set the side of
+	the hole correctly.
+	The constructor of the hole objects fills these with the correct
+	number of stones (holes get 6 stones, homes get none).
+
+class BOARD
+
+	This class consists of 12 HOLEs, 1 BOTHOME and 1 TOPHOME.
+	In the class constructor these holes are connected to a list
+	by setting the Prev, Next and Oppos pointers correctly.	
+	(Actually, this is done by the holes' SetValue() functions).
+	There are two HOLE pointers which are made to point to the 
+	first playing holes on each side, and two pointers to the homes.
+	The structure MOVES contains a pointer to a hole. This hole is
+	the last one in which a stone was inserted during the move. If
+	the player could take out stones from the opposite hole, this number
+	is stored in OppStones in MOVES. 
+	The variable LastMove is the index for the array Moves that is made
+	up from elements of type MOVES.
+	The function Move(BYTE) makes a move from the hole indicated by the
+	passed value and by the player. It takes the stones out of the specified
+	hole and spreads them along the hole path. It looks whether it may take
+	out stones from the opposite hole, and if yes, does this. If the player
+	has another move, this function returns true, otherwise false. 
+	It does not check whether the move was valid.
+	The function OneUndo(BYTE&) is the reverse operation for move. It looks
+	whether the player has put stones from the opposite hole into the home
+	and takes these out again, then traces the move back to the beginning.
+	It resets the variable Moves[LastMove].Oppstones to 0 and decreases LastMove
+	by one.
+	The function Undo calls OneUndo, and, if the new pointer to the last
+	hole of the move points to the player's home, calls it again. Then
+	it toggles the players.
+
+
+
+
+
+
+
+	The function
+	The function
+	The function
+	The function
+	The function
+

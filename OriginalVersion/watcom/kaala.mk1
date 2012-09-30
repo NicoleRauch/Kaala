@@ -1,0 +1,40 @@
+!define BLANK ""
+e:\arbeit\progr\kaala\watcom\game.obj : e:\arbeit\progr\kaala\watcom\game.cp&
+p .AUTODEPEND
+ @e:
+ cd e:\arbeit\progr\kaala\watcom
+ *wpp386 game.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -od -of -d2 -m&
+f -4r -bt=os2
+
+e:\arbeit\progr\kaala\watcom\kaala.obj : e:\arbeit\progr\kaala\watcom\kaala.&
+cpp .AUTODEPEND
+ @e:
+ cd e:\arbeit\progr\kaala\watcom
+ *wpp386 kaala.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -od -of -d2 -&
+mf -4r -bt=os2
+
+e:\arbeit\progr\kaala\watcom\pmgame.obj : e:\arbeit\progr\kaala\watcom\pmgam&
+e.cpp .AUTODEPEND
+ @e:
+ cd e:\arbeit\progr\kaala\watcom
+ *wpp386 pmgame.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -od -of -d2 &
+-mf -4r -bt=os2
+
+e:\arbeit\progr\kaala\watcom\kaala.exe : e:\arbeit\progr\kaala\watcom\game.o&
+bj e:\arbeit\progr\kaala\watcom\kaala.obj e:\arbeit\progr\kaala\watcom\pmgam&
+e.obj .AUTODEPEND
+ @e:
+ cd e:\arbeit\progr\kaala\watcom
+ @%write kaala.lk1 NAME kaala
+ @%append kaala.lk1 FIL game.obj,kaala.obj,pmgame.obj
+ @%append kaala.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b kaala.imp 
+ @%append kaala.lk1 LIBR kaala.imp
+!endif
+ *wlink SYS os2v2 pm op m d all op st=8192 op maxe=25 op q op symf @kaala.lk&
+1
+!ifneq BLANK ""
+ rc -i $[: -i E:\WATCOM\h -i E:\WATCOM\h\os2  kaala.exe
+!endif
+

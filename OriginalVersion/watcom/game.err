@@ -1,0 +1,5 @@
+game.cpp(42): Warning! W014: (col 1) no reference to symbol 'Player' 
+game.cpp(42): Note! N392: (col 1) 'PLAYER * Player' in 'HOLE * HOLE::Drop( unsigned char *, PLAYER * )' defined in: game.cpp(37) (col 40) 
+game.cpp(49): Warning! W014: (col 1) no reference to symbol 'Player' 
+game.cpp(49): Note! N392: (col 1) 'PLAYER * Player' in 'HOLE * HOLE::Undo( unsigned char *, PLAYER * )' defined in: game.cpp(44) (col 40) 
+game.cpp(181): Warning! W389: (col 60) integral value may be truncated during assignment or initialization 

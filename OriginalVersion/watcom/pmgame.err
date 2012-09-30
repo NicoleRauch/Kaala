@@ -1,0 +1,19 @@
+game.h(5): Error! E125: (col 27) invalid redefinition of the typedef name 'BYTE' 
+game.h(5): Note! N392: (col 27) 'BYTE' defined in: E:\WATCOM\h\os2\os2def.h(97) (col 14) 
+game.h(5): Note! N393: (col 27) included from pmgame.cpp(10) 
+pmgame.cpp(16): Error! E254: (col 1) 'HOLE::DrawOutline' has not been declared as a member 
+pmgame.cpp(16): Note! N392: (col 1) 'void HOLE::DrawOutline( unsigned long, PLAYER * )' defined in: pmgame.cpp(15) (col 10) 
+pmgame.cpp(17): Error! E029: (col 32) symbol 'arcparams' has not been declared 
+pmgame.cpp(18): Error! E029: (col 24) symbol 'Center' has not been declared 
+pmgame.cpp(19): Error! E029: (col 31) symbol 'LINEWIDTH_THICK' has not been declared 
+pmgame.cpp(21): Error! E029: (col 9) symbol 'GpiFullArc' has not been declared 
+pmgame.cpp(26): Error! E029: (col 31) symbol 'LINEWIDTH_NORMAL' has not been declared 
+pmgame.cpp(34): Error! E254: (col 1) 'HOLE::Draw' has not been declared as a member 
+pmgame.cpp(34): Note! N392: (col 1) 'HOLE * HOLE::Draw( unsigned long )' defined in: pmgame.cpp(33) (col 11) 
+pmgame.cpp(37): Error! E029: (col 32) symbol 'arcparams' has not been declared 
+pmgame.cpp(38): Error! E029: (col 24) symbol 'Center' has not been declared 
+pmgame.cpp(40): Error! E029: (col 9) symbol 'GpiFullArc' has not been declared 
+pmgame.cpp(78): Error! E029: (col 14) symbol 'SetCenter' has not been declared 
+pmgame.cpp(80): Error! E029: (col 14) symbol 'SetCenter' has not been declared 
+pmgame.cpp(130): Warning! W389: (col 28) integral value may be truncated during assignment or initialization 
+pmgame.cpp(180): Warning! W389: (col 60) integral value may be truncated during assignment or initialization 

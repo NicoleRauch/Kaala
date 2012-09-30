@@ -1,0 +1,11 @@
+game.h(5): Error! E125: (col 27) invalid redefinition of the typedef name 'BYTE' 
+game.h(5): Note! N392: (col 27) 'BYTE' defined in: E:\WATCOM\h\os2\os2def.h(97) (col 14) 
+game.h(5): Note! N393: (col 27) included from kaala.cpp(11) 
+kaala.cpp(130): Warning! W014: (col 1) no reference to symbol 'argc' 
+kaala.cpp(130): Note! N392: (col 1) 'int argc' in 'int main( int, char * *, char * * )' defined in: kaala.cpp(38) (col 10) 
+kaala.cpp(130): Warning! W014: (col 1) no reference to symbol 'argv' 
+kaala.cpp(130): Note! N392: (col 1) 'char * * argv' in 'int main( int, char * *, char * * )' defined in: kaala.cpp(38) (col 22) 
+kaala.cpp(130): Warning! W014: (col 1) no reference to symbol 'envp' 
+kaala.cpp(130): Note! N392: (col 1) 'char * * envp' in 'int main( int, char * *, char * * )' defined in: kaala.cpp(38) (col 36) 
+kaala.cpp(224): Warning! W689: (col 55) conditional expression is always true (non-zero) 
+kaala.cpp(233): Warning! W690: (col 56) conditional expression is always false (zero) 
